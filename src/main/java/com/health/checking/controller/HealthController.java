@@ -12,14 +12,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.health.checking.database.DietDatabase;
 import com.health.checking.database.HealthDatabase;
+import com.health.checking.modal.DietModal;
+import com.health.checking.modal.DietPlan;
 import com.health.checking.modal.HealthModal;
 
 @CrossOrigin
 @RestController
 public class HealthController {
+	private static final String String = null;
+
 	@Autowired
 	public  HealthDatabase healthdatabase;
+	
+	@Autowired
+	public  DietDatabase dietdatabase;
 	
 	public float bloodPressureMax=0;
 	public float diabetesMax=0;
@@ -377,6 +385,49 @@ public class HealthController {
 	
 		healthdatabase.save(user);
 		return user;
+	
+	}
+	
+	@PostMapping("/addingdefaultdiet")
+	public Object addDefaultDiet(@RequestBody DietModal diet)
+	{	
+		
+		dietdatabase.save(diet);
+		return diet;
+	
+	}
+	
+	@PostMapping("/getdiet")
+	public Object getDiet(@RequestBody HealthModal user)
+	{	String diet = null;
+		DietPlan plan=new DietPlan();
+		DietModal dietmodal=new DietModal();
+		String temp="temp";
+		String bloodpressure="bloodpressure";
+		String bmiweight="bmiweight";
+		
+		if(user.getTempWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(temp);
+			temp=dietmodal.getDiet();
+		}
+		
+		if(user.getBloodPressureWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(bloodpressure);
+			bloodpressure=dietmodal.getDiet();
+		}
+		
+		if(user.getBmiWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(bmiweight);
+			bmiweight=dietmodal.getDiet();
+		}
+		
+		diet=temp+". "+bloodpressure+". "+bmiweight;
+		
+		plan.setDiet(diet);
+		return plan;
 	
 	}
 }
