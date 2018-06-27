@@ -66,6 +66,7 @@ public class HealthModal {
 		private float totalSimilarityComplex;
 		
 		private String diet;
+		private String disease;
 		
 		public HealthModal() {
 			super();
@@ -83,7 +84,8 @@ public class HealthModal {
 				float rbcSimilarity, float pigmentationSimilarity, float lipaseSimilarity, float electrolyteSimilarity,
 				float drugContentSimilarity, float potassiumSimilarity, float sodiumSimilarity,
 				float chlorideSimilarity, float calcuimSimilarity, float hemaglobinSimilarity, float alkalineSimilarity,
-				float tempSimilarity, float plateletSimilarity, float totalSimilarityComplex, String diet) {
+				float tempSimilarity, float plateletSimilarity, float totalSimilarityComplex, String diet,
+				String disease) {
 			super();
 			this.emailId = emailId;
 			this.bloodPressure = bloodPressure;
@@ -139,6 +141,7 @@ public class HealthModal {
 			this.plateletSimilarity = plateletSimilarity;
 			this.totalSimilarityComplex = totalSimilarityComplex;
 			this.diet = diet;
+			this.disease = disease;
 		}
 
 		public String getEmailId() {
@@ -572,6 +575,15 @@ public class HealthModal {
 		public void setDiet(String diet) {
 			this.diet = diet;
 		}
+
+		public String getDisease() {
+			return disease;
+		}
+
+		public void setDisease(String disease) {
+			this.disease = disease;
+		}
+
 		
 		
 		

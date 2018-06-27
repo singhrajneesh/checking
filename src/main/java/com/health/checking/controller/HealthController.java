@@ -21,7 +21,6 @@ import com.health.checking.modal.HealthModal;
 @CrossOrigin
 @RestController
 public class HealthController {
-	private static final String String = null;
 
 	@Autowired
 	public  HealthDatabase healthdatabase;
@@ -218,6 +217,16 @@ public class HealthController {
 											+user.getTempSimilarity()*user.getTempWeight()
 											+user.getWbcSimilarity()*user.getWbcWeight()
 											);
+			
+			if(user.getTotalSimilarityComplex()<=1 && user.getTotalSimilarityComplex()>=0)
+				user.setDisease("Jaundice");
+			if(user.getTotalSimilarityComplex()<=2 && user.getTotalSimilarityComplex()>1)
+				user.setDisease("Lever Infection");
+			if(user.getTotalSimilarityComplex()<=3 && user.getTotalSimilarityComplex()>2)
+				user.setDisease("Kidney Problem");
+			if(user.getTotalSimilarityComplex()<=4 && user.getTotalSimilarityComplex()>3)
+				user.setDisease("Liver infection");
+			
 			String diet = null;
 			DietModal dietmodal=new DietModal();
 			String temp="temp";
@@ -529,6 +538,17 @@ public class HealthController {
 											);
 
 		}
+		
+		if(user.getTotalSimilarityComplex()<=1 && user.getTotalSimilarityComplex()>=0)
+			user.setDisease("Jaundice");
+		if(user.getTotalSimilarityComplex()<=2 && user.getTotalSimilarityComplex()>1)
+			user.setDisease("Lever Infection");
+		if(user.getTotalSimilarityComplex()<=3 && user.getTotalSimilarityComplex()>2)
+			user.setDisease("Kidney Problem");
+		if(user.getTotalSimilarityComplex()<=4 && user.getTotalSimilarityComplex()>3)
+			user.setDisease("Liver infection");
+		
+		
 		String diet = null;
 		DietModal dietmodal=new DietModal();
 		String temp="temp";
