@@ -65,12 +65,12 @@ public class HealthModal {
 		
 		private float totalSimilarityComplex;
 		
+		private String diet;
+		
 		public HealthModal() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-		
-		
 
 		public HealthModal(String emailId, float bloodPressure, float diabetes, float bmi, float wbc, float rbc,
 				float pigmentation, float lipase, float electrolyte, float drugContent, float potassium, float sodium,
@@ -83,7 +83,7 @@ public class HealthModal {
 				float rbcSimilarity, float pigmentationSimilarity, float lipaseSimilarity, float electrolyteSimilarity,
 				float drugContentSimilarity, float potassiumSimilarity, float sodiumSimilarity,
 				float chlorideSimilarity, float calcuimSimilarity, float hemaglobinSimilarity, float alkalineSimilarity,
-				float tempSimilarity, float plateletSimilarity, float totalSimilarityComplex) {
+				float tempSimilarity, float plateletSimilarity, float totalSimilarityComplex, String diet) {
 			super();
 			this.emailId = emailId;
 			this.bloodPressure = bloodPressure;
@@ -138,9 +138,8 @@ public class HealthModal {
 			this.tempSimilarity = tempSimilarity;
 			this.plateletSimilarity = plateletSimilarity;
 			this.totalSimilarityComplex = totalSimilarityComplex;
+			this.diet = diet;
 		}
-
-
 
 		public String getEmailId() {
 			return emailId;
@@ -565,10 +564,16 @@ public class HealthModal {
 		public void setTotalSimilarityComplex(float totalSimilarityComplex) {
 			this.totalSimilarityComplex = totalSimilarityComplex;
 		}
-		
-		
-		
-		
 
+		public String getDiet() {
+			return diet;
+		}
+
+		public void setDiet(String diet) {
+			this.diet = diet;
+		}
+		
+		
+		
 		
 }

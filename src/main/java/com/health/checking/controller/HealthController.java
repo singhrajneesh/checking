@@ -218,7 +218,163 @@ public class HealthController {
 											+user.getTempSimilarity()*user.getTempWeight()
 											+user.getWbcSimilarity()*user.getWbcWeight()
 											);
+			String diet = null;
+			DietModal dietmodal=new DietModal();
+			String temp="temp";
+			String bloodpressure="bloodpressure";
+			String diabetes="diabetes";
+			String wbc="wbc";
+			String rbc="rbc";
+			String pigmentation="pigmentation";
+			String lipase="lipase";
+			String electrolyte="electrolyte";
+			String drugContent="drugContent";
+			String potassium="potassium";
+			String sodium="sodium";
+			String chloride="chloride";
+			String calcuim="calcuim";
+			String hemaglobin="hemaglobin";
+			String alkaline="alkaline";
+			String platelet="platelet";
+			String bmi="bmi";
+			String temp1=null;
+			String bloodpressure1=null;
+			String diabetes1=null;
+			String wbc1=null;
+			String rbc1=null;
+			String pigmentation1=null;
+			String lipase1=null;
+			String electrolyte1=null;
+			String drugContent1=null;
+			String potassium1=null;
+			String sodium1=null;
+			String chloride1=null;
+			String calcuim1=null;
+			String hemaglobin1=null;
+			String alkaline1=null;
+			String platelet1=null;
+			String bmi1=null;
 			
+			if(user.getTempWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(temp);
+				temp1=dietmodal.getDiet();
+				diet=temp1+". ";
+			}
+			
+			if(user.getBloodPressureWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(bloodpressure);
+				bloodpressure1=dietmodal.getDiet();
+				diet=bloodpressure1+". ";
+			}
+			
+			if(user.getBmiWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(bmi);
+				bmi1=dietmodal.getDiet();
+				diet=bmi1+". ";
+			}
+			
+			if(user.getDiabetesWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(diabetes);
+				diabetes1=dietmodal.getDiet();
+				diet=diabetes1+". ";
+			}
+			
+			if(user.getWbcWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(wbc);
+				wbc1=dietmodal.getDiet();
+				diet=wbc1+". ";
+			}
+			
+			if(user.getRbcWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(rbc);
+				rbc1=dietmodal.getDiet();
+				diet=rbc1+". ";
+			}
+			
+			if(user.getPigmentationWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(pigmentation);
+				pigmentation1=dietmodal.getDiet();
+				diet=pigmentation1+". ";
+			}
+			
+			if(user.getLipaseWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(lipase);
+				lipase1=dietmodal.getDiet();
+				diet=lipase1+". ";
+			}
+			
+			if(user.getElectrolyteWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(electrolyte);
+				electrolyte1=dietmodal.getDiet();
+				diet=electrolyte1+". ";
+			}
+			
+			if(user.getDrugContentWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(drugContent);
+				drugContent1=dietmodal.getDiet();
+				diet=drugContent1+". ";
+			}
+			
+			if(user.getPotassiumWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(potassium);
+				potassium1=dietmodal.getDiet();
+				diet=potassium1+". ";
+			}
+			
+			if(user.getSodiumWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(sodium);
+				sodium1=dietmodal.getDiet();
+				diet=sodium1+". ";
+			}
+			
+			if(user.getChlorideWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(chloride);
+				chloride1=dietmodal.getDiet();
+				diet=chloride1+". ";
+			}
+			
+			if(user.getCalcuimWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(calcuim);
+				calcuim1=dietmodal.getDiet();
+				diet=calcuim1+". ";
+			}
+			
+			if(user.getHemaglobinWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(hemaglobin);
+				hemaglobin1=dietmodal.getDiet();
+				diet=hemaglobin1+". ";
+			}
+				
+			if(user.getAlkalineWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(alkaline);
+				alkaline1=dietmodal.getDiet();
+				diet=alkaline1+". ";
+			}
+				
+			if(user.getPlateletWeight()>0.7)
+			{	
+				dietmodal=dietdatabase.findByParameter(platelet);
+				platelet1=dietmodal.getDiet();
+				diet=platelet1+". ";
+			}
+
+			user.setDiet(diet);
 	
 		healthdatabase.save(user);
 		return user;
@@ -373,6 +529,163 @@ public class HealthController {
 											);
 
 		}
+		String diet = null;
+		DietModal dietmodal=new DietModal();
+		String temp="temp";
+		String bloodpressure="bloodpressure";
+		String diabetes="diabetes";
+		String wbc="wbc";
+		String rbc="rbc";
+		String pigmentation="pigmentation";
+		String lipase="lipase";
+		String electrolyte="electrolyte";
+		String drugContent="drugContent";
+		String potassium="potassium";
+		String sodium="sodium";
+		String chloride="chloride";
+		String calcuim="calcuim";
+		String hemaglobin="hemaglobin";
+		String alkaline="alkaline";
+		String platelet="platelet";
+		String bmi="bmi";
+		String temp1=null;
+		String bloodpressure1=null;
+		String diabetes1=null;
+		String wbc1=null;
+		String rbc1=null;
+		String pigmentation1=null;
+		String lipase1=null;
+		String electrolyte1=null;
+		String drugContent1=null;
+		String potassium1=null;
+		String sodium1=null;
+		String chloride1=null;
+		String calcuim1=null;
+		String hemaglobin1=null;
+		String alkaline1=null;
+		String platelet1=null;
+		String bmi1=null;
+		
+		if(user.getTempWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(temp);
+			temp1=dietmodal.getDiet();
+			diet=temp1+". ";
+		}
+		
+		if(user.getBloodPressureWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(bloodpressure);
+			bloodpressure1=dietmodal.getDiet();
+			diet=bloodpressure1+". ";
+		}
+		
+		if(user.getBmiWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(bmi);
+			bmi1=dietmodal.getDiet();
+			diet=bmi1+". ";
+		}
+		
+		if(user.getDiabetesWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(diabetes);
+			diabetes1=dietmodal.getDiet();
+			diet=diabetes1+". ";
+		}
+		
+		if(user.getWbcWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(wbc);
+			wbc1=dietmodal.getDiet();
+			diet=wbc1+". ";
+		}
+		
+		if(user.getRbcWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(rbc);
+			rbc1=dietmodal.getDiet();
+			diet=rbc1+". ";
+		}
+		
+		if(user.getPigmentationWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(pigmentation);
+			pigmentation1=dietmodal.getDiet();
+			diet=pigmentation1+". ";
+		}
+		
+		if(user.getLipaseWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(lipase);
+			lipase1=dietmodal.getDiet();
+			diet=lipase1+". ";
+		}
+		
+		if(user.getElectrolyteWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(electrolyte);
+			electrolyte1=dietmodal.getDiet();
+			diet=electrolyte1+". ";
+		}
+		
+		if(user.getDrugContentWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(drugContent);
+			drugContent1=dietmodal.getDiet();
+			diet=drugContent1+". ";
+		}
+		
+		if(user.getPotassiumWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(potassium);
+			potassium1=dietmodal.getDiet();
+			diet=potassium1+". ";
+		}
+		
+		if(user.getSodiumWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(sodium);
+			sodium1=dietmodal.getDiet();
+			diet=sodium1+". ";
+		}
+		
+		if(user.getChlorideWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(chloride);
+			chloride1=dietmodal.getDiet();
+			diet=chloride1+". ";
+		}
+		
+		if(user.getCalcuimWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(calcuim);
+			calcuim1=dietmodal.getDiet();
+			diet=calcuim1+". ";
+		}
+		
+		if(user.getHemaglobinWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(hemaglobin);
+			hemaglobin1=dietmodal.getDiet();
+			diet=hemaglobin1+". ";
+		}
+			
+		if(user.getAlkalineWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(alkaline);
+			alkaline1=dietmodal.getDiet();
+			diet=alkaline1+". ";
+		}
+			
+		if(user.getPlateletWeight()>0.7)
+		{	
+			dietmodal=dietdatabase.findByParameter(platelet);
+			platelet1=dietmodal.getDiet();
+			diet=platelet1+". ";
+		}
+	
+		user.setDiet(diet);
 		healthdatabase.save(user);
 		return user;
 	
@@ -397,37 +710,11 @@ public class HealthController {
 	
 	}
 	
-	@PostMapping("/getdiet")
-	public Object getDiet(@RequestBody HealthModal user)
-	{	String diet = null;
+	@GetMapping("/getdiet/{emailId}")
+	public Object getDiet(@PathVariable String emailId)
+	{	HealthModal patient=healthdatabase.findByEmailId(emailId);
 		DietPlan plan=new DietPlan();
-		DietModal dietmodal=new DietModal();
-		String temp="temp";
-		String bloodpressure="bloodpressure";
-		String bmiweight="bmiweight";
-		
-		if(user.getTempWeight()>0.7)
-		{	
-			dietmodal=dietdatabase.findByParameter(temp);
-			temp=dietmodal.getDiet();
-		}
-		
-		if(user.getBloodPressureWeight()>0.7)
-		{	
-			dietmodal=dietdatabase.findByParameter(bloodpressure);
-			bloodpressure=dietmodal.getDiet();
-		}
-		
-		if(user.getBmiWeight()>0.7)
-		{	
-			dietmodal=dietdatabase.findByParameter(bmiweight);
-			bmiweight=dietmodal.getDiet();
-		}
-		
-		diet=temp+". "+bloodpressure+". "+bmiweight;
-		
-		plan.setDiet(diet);
+		plan.setDiet(patient.getDiet());
 		return plan;
-	
 	}
 }
